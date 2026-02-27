@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include<cstdlib>
 #include<ctime>
@@ -14,7 +13,6 @@ int ReadNumberOfQuesition(string Message)
 		cout << Message<<endl;
 		cin >> Number;
 	} while (Number < 0);
-
 	return Number;
 }
 
@@ -26,7 +24,6 @@ int RandomNumber(int From,int To)
 
 string GetOpTypeSymbol(enOperationType OpType)
 {
-
 	switch (OpType)
 	{
 	case enOperationType::Add:
@@ -43,8 +40,7 @@ string GetOpTypeSymbol(enOperationType OpType)
 		break;
 	default:
 		return "Mix";
-	}
-	
+	}	
 }
 
 enOperationType GetRandomOperationType()
@@ -81,9 +77,7 @@ int SimpleCalculator(int Number1, int Number2, enOperationType OpType)
 		return (Number2 != 0) ? (Number1 / Number2) : 0;
 	default:
 		return Number1 + Number2;
-
 	}
-
 }
 
 struct stQuesition
@@ -95,7 +89,6 @@ struct stQuesition
 	int CorrectAnswer = 0;
 	int PlayerAnswer = 0;
 	bool AnswerResult = false;
-
 };
 
 struct stQuiz
@@ -134,14 +127,12 @@ stQuesition GenerateQuesition(enQuesitionLevel QuesitionLevel, enOperationType O
 		Quesition.Number1 = RandomNumber(50, 100);
 		Quesition.Number2 = RandomNumber(50, 100);
 		break;
-
 	}
 
 	Quesition.CorrectAnswer = SimpleCalculator(Quesition.Number1, Quesition.Number2, Quesition.OperationType);
 		Quesition.QuesitionLevel = QuesitionLevel;
 
 		return Quesition;
-
 }
 
 void AskAndCorrectQuestionListAnswers(stQuiz& Quiz)
@@ -164,7 +155,6 @@ void AskAndCorrectQuestionListAnswers(stQuiz& Quiz)
 			cout << "Wrong Correct Answer : " << Quiz.QuestionList[QuesitionNumber].CorrectAnswer << endl;
 			Quiz.NumberOfWrongAnswers++;
 		}
-
 	}
 
 	Quiz.IsPass = (Quiz.NumberOfRightAnswers >= Quiz.NumberOfWrongAnswers);
@@ -180,9 +170,7 @@ void PlayMathGame()
 
 	for (short QuesitionNumber = 0;QuesitionNumber < Quiz.NumberOfQuesition;QuesitionNumber++)
 	{
-
 		Quiz.QuestionList[QuesitionNumber] = GenerateQuesition(Quiz.QuesitionLevel, Quiz.OpType);
-
 	}
 
 	AskAndCorrectQuestionListAnswers(Quiz);
@@ -190,9 +178,7 @@ void PlayMathGame()
 	cout << "\nQiuz Completed! Right Answers : " << Quiz.NumberOfRightAnswers << ",Wrong Answers: " << Quiz.NumberOfWrongAnswers << "\n";
 
 	cout << (Quiz.IsPass ? "You Passed the Quiz !\n " : "you Failed the Quiz!\n");
-
 }
-
 
 int main()
 {
@@ -200,3 +186,4 @@ int main()
 
 	PlayMathGame();
 }
+
