@@ -1,6 +1,6 @@
 # Math-Game--problems-level2
 
-🧮 Math Quiz Game (C++)
+## 🧮 Math Quiz Game (C++)
 
 A simple console-based Math Quiz Game built using C++.
 
