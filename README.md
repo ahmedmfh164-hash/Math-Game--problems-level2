@@ -101,15 +101,3 @@ You Passed the Quiz!
 👨‍💻 Author
 
 Ahmed Muhammad
-
----
-
-⭐ Contribute
-
-Feel free to fork and improve the game 🚀
-
----
-
-📄 License
-
-Free to use for learning purposes.
